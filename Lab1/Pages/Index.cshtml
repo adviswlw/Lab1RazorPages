@@ -1,0 +1,78 @@
+﻿@page
+@model IndexModel
+@{
+}
+<div class="text-center">
+    <h1 class="display-4">Список языков программирования</h1>
+    <style>
+        h1 {
+            font-weight: bold;
+            font-size: 31px;
+            font-family: "Roboto", sans-serif;
+            color: #4682B4;
+        }
+        td, th{
+            font-weight: normal;
+            font-size: 15;
+            font-family: "Roboto", sans-serif;
+        }
+        .table {
+            width: 88%;
+            margin-top: 22px;
+            border-collapse: collapse;
+        }
+        .table th, .table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        .table th {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            text-align: left;
+                background-color: #6C92AF;
+            color: #293133;
+        }
+         .my-button {
+            padding: 10px 20px;
+            background-color: #4D7198;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .my-button:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
+</div>
+
+<table class="table" id="data-table">
+    <thead>
+        <tr>
+            <th>название</th>
+            <th>тип</th>
+            <th>рейтинг</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var language in Model.Languages)
+        {
+            <tr>
+                <td>@language.Name</td>
+                <td>@language.Type</td>
+                <td>@language.Rating</td>
+                <td>
+                    <form method="post" asp-page="./Edit" asp-route-id="@language.Id">
+                        <button type="button" class="btn btn-primary" onclick="window.location.href='./Edit?id=@language.Id'">редактировать</button>
+                    </form>
+                    <form method="post" asp-page="./Delete" asp-route-id="@language.Id">
+                        <button type="submit" class="btn btn-danger">удалить</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

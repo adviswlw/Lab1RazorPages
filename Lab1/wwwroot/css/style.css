@@ -1,0 +1,54 @@
+.form-group {
+    margin-bottom: 15px;
+    //отступ
+}
+
+    .form-group label {
+        font-weight: bold;
+    }
+
+    .form-group input {
+        width: 50%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+    }
+
+    .form-group select {
+        width: 50%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+    }
+
+    .form-group button {
+        padding: 10px 20px;
+        background-color: brown;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+            // изменяет цвет кнопки при наведении кнопки
+        }
+
+    .form-group a {
+        margin-left: 15px;
+        color: darkred;
+        text-decoration: none;
+    }
+
+        .form-group a:hover {
+            text-decoration: underline;
+            // подчеркивает при наведении на ссылку
+        }
+.navbar-nav {
+    flex-direction: row;
+}
+
+.nav-item {
+    margin-right: 10px; 
+}

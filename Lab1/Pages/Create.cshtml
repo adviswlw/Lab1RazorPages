@@ -1,0 +1,87 @@
+﻿@page
+@model Lab1.Pages.CreateModel
+@{
+}
+<div class="text-center">
+    <h1 class="display-4">Добавить новый язык программирования</h1>
+    <style>
+        .form-group {
+            margin-bottom: 15px; 
+        }
+        .form-group label {
+            font-weight: bold;
+            font-size: 15px;
+            font-family: "Roboto", sans-serif;
+        }
+        .form-group input { 
+            width: 88%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        } 
+        .form-group select {
+            width: 88%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        .my-button {
+            padding: 5px 10px;
+            background-color: #4D7198;
+            color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .my-button:hover {
+            background-color: #218838;  
+            border-color: #1e7e34; 
+        }
+        .form-group a {
+            margin-left: 15px;
+            color: darkred;
+            text-decoration: none;
+         }
+         .form-group a:hover {
+             text-decoration: underline; 
+         }
+        .btn-success {
+            padding: 10px 20px;
+            background-color: #4D7198;
+            color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .btn-success:hover { 
+            background-color: #218838;  
+            border-color: #1e7e34; 
+        }
+    </style> 
+</div>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Language.Name">название</label>
+        <input asp-for="Language.Name" class="form-control" />
+        <span asp-validation-for="Language.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Language.Type">тип</label>
+        <select asp-for="Language.Type" class="form-control">
+            <option value="функциональный">функциональный</option>
+            <option value="императивный">импефративный</option>
+            <option value="логический">логический</option>
+            <option value="другой">другой</option>
+        </select>
+        <span asp-validation-for="Language.Type" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Language.Rating">рейтинг</label>
+        <input asp-for="Language.Rating" class="form-control" min="1" max="5" />
+        <span asp-validation-for="Language.Rating" class="text-danger"></span>
+    </div>
+    <button type="submit" class="my-button">добавить</button>
+</form>
+
+

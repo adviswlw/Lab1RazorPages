@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Lab1</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Lab1.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        h1, h2, h3, h4, h5 {
+            font-weight: normal;
+            font-size: 22px;
+            font-family: "Roboto", sans-serif;
+        }
+        .nav-link {
+            background-color: #F5F5F5;
+            color: #293133;
+        }
+        .footer {
+            padding: 22px 0;
+            background-color: #F5F5F5;
+            border-top: 1px solid #293133;
+        }
+        /* для кнопок навигации*/
+        .nav-button {
+            display: inline-block; 
+            margin-right: 10px;  
+            background-color: #4D7198;
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+            font-family: "Roboto", sans-serif;
+            cursor: pointer;
+            padding: 8px 20px;
+            text-decoration: none;
+            margin: 4px 2px;
+            transition: background-color 0.3s ease;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        .nav-button:hover {
+                background-color: #6C92AF;
+                border-color: #4D7198;
+            }   
+        html, body {
+            max-height: 100vh;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Lab1_RazorPages</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <a class="nav-button" asp-area="" asp-page="/Home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-button" asp-area="" asp-page="/Index">Просмотр список языков программирования</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-button" asp-area="" asp-page="/Create">Добавить язык</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-button" asp-area="" asp-page="/Edit">Редактировать язык</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
